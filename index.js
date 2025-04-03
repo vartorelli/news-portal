@@ -5,30 +5,23 @@ const params = {
 };
 
 async function getData(params) {
-  if (params.q.trim() === "") return; // Evita consultas vacías
-  
-  const url = `https://newsapi.org/v2/everything?q=${params.q}&apiKey=${params.keyAPI}&pageSize=${params.pageSize}`;
-  let articles = {};
+  const url = `http://localhost:3000/news?q=${params.q}`;
+
   console.log("Cargando datos...");
-
   try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "User-Agent": "Mozilla/5.0", // Simula un navegador
-        "Accept": "application/json"
-      }
-    });
-
-    if (!response.ok) throw new Error(`Response status: ${response.status}`);
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Error: ${response.status}`);
     const data = await response.json();
-    articles = data.articles;
-
-    if (articles.length !== 0) { // Corregido "lenght"
-      createNewsDiv(articles);
+    
+    console.log("Datos recibidos:", data);
+    
+    if (data.articles && data.articles.length > 0) {
+      createNewsDiv(data.articles);
+    } else {
+      console.log("No hay artículos disponibles.");
     }
   } catch (err) {
-    console.error("Error:", err.message);
+    console.error("Error al obtener datos:", err.message);
   }
 }
 
