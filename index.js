@@ -5,17 +5,17 @@ const params = {
 };
 
 async function getData(params) {
-  const SERVER_URL = "https://news-portal-70oh.onrender.com/"; 
-  const url = `${SERVER_URL}/news?q=${params.q}`;
+  const SERVER_URL = "https://news-portal-70oh.onrender.com/";
+  const url = `${SERVER_URL}news?q=${params.q}`;
 
   console.log("Cargando datos...");
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`Error: ${response.status}`);
     const data = await response.json();
-    
+
     console.log("Datos recibidos:", data);
-    
+
     if (data.articles && data.articles.length > 0) {
       createNewsDiv(data.articles);
     } else {
@@ -29,14 +29,16 @@ async function getData(params) {
 const createNewsDiv = (articles) => {
   const $divNews = document.querySelector(".noticias");
   $divNews.innerHTML = "";
-  
+
   articles.forEach((el, i) => {
     const div = document.createElement("div");
     div.setAttribute("id", i);
     div.innerHTML = `
       <a href="${el.url}" target="_blank">
         <h2 class="title">${el.title}</h2>
-        <img src="${el.urlToImage || "default.jpg"}" alt="${el.author || "Desconocido"}">
+        <img src="${el.urlToImage || "default.jpg"}" alt="${
+      el.author || "Desconocido"
+    }">
         <p>${el.description || "Sin descripción"}</p>
       </a>
     `;
