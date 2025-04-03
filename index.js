@@ -1,5 +1,4 @@
 const params = {
-  keyAPI: "0391f07dfbac4aefb7f1a739eb04e899",
   pageSize: 21,
   q: "keywords",
 };
