@@ -5,9 +5,6 @@ const params = {
 };
 
 async function getData(params) {
-  // if(!textToSearch){
-  //   textToSearch= "keywords";
-  // }
   const url = `https://newsapi.org/v2/everything?q=${params.q}&apiKey=${params.keyAPI}&pageSize=${params.pageSize}`;
   let articles = {};
   console.log(params);

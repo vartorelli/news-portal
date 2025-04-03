@@ -1,0 +1,18 @@
+{
+  "name": "noticias-sitio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Un proyecto donde se utilizo la API NewsAPI, donde aplicamos conceptos de JavaScript como fetch.\r Y tambien tuvimos que crear con HTML y CSS el formato de la página",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

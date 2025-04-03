@@ -53,7 +53,7 @@ h1 {
 }
 
 .noticias div {
-    width: 400px;
+    width: 350px;
     height: fit-content;
     margin: .3rem;
     text-decoration: none;
@@ -62,8 +62,8 @@ h1 {
 }
 
 img {
-    max-width: 400px;
-    width: 390px;
+    max-width: 350px;
+    width: 340px;
 }
 
 a {
