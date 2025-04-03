@@ -5,7 +5,8 @@ const params = {
 };
 
 async function getData(params) {
-  const url = `http://localhost:3000/news?q=${params.q}`;
+  const SERVER_URL = "https://news-portal-70oh.onrender.com/"; 
+  const url = `${SERVER_URL}/news?q=${params.q}`;
 
   console.log("Cargando datos...");
   try {
