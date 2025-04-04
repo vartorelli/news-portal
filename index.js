@@ -59,5 +59,4 @@ $input.addEventListener("keypress", (e) => {
   if (e.key === "Enter") searchNews();
 });
 
-// Cargar noticias por defecto
 getData(params);
